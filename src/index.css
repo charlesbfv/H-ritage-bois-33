@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", "Libre Baskerville", serif;
+  --font-sans: "Inter", "Montserrat", system-ui, sans-serif;
+  --font-mont: "Montserrat", system-ui, sans-serif;
+
+  --color-wood: #6b4a2d;
+  --color-wood-dark: #4a3320;
+  --color-forest: #4f6f52;
+  --color-forest-dark: #3c5540;
+  --color-beige: #f5f1eb;
+  --color-stone: #8c8c8c;
+  --color-gold: #c9a46a;
+  --color-gold-dark: #b48e55;
+  --color-ink: #2e2e2e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-beige);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-wood);
+}
