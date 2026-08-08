@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Reviews from '../components/Reviews';
 import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon, SlidersIcon } from '../components/icons';
 
@@ -171,7 +172,11 @@ export default function Contact() {
                   3 Allée de Sandillan, Le Taillan-Médoc, 33320
                 </li>
               </ul>
-              <p className="mt-4 text-xs text-stone">SIREN 100820786</p>
+              <p className="mt-4 text-xs text-stone">
+                <Link to="/mentions-legales" className="hover:text-forest">
+                  Mentions légales
+                </Link>
+              </p>
             </div>
 
             <div className="rounded-2xl bg-forest/5 p-7">

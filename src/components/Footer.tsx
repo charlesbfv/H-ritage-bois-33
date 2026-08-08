@@ -57,7 +57,10 @@ export default function Footer() {
 
       <div className="border-t border-beige/15 px-5 py-5 text-center text-xs text-beige/60">
         <p>
-          © {new Date().getFullYear()} Héritage Bois 33 — SIREN 100820786 — Tous droits réservés
+          © {new Date().getFullYear()} Héritage Bois 33 — Tous droits réservés —{' '}
+          <Link to="/mentions-legales" className="hover:text-gold">
+            Mentions légales
+          </Link>
         </p>
         <p className="mt-1">Zone d'intervention : Bordeaux et alentours, Bassin d'Arcachon et alentours</p>
       </div>

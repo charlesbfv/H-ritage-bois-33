@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Prestations from './pages/Prestations';
 import APropos from './pages/APropos';
 import Contact from './pages/Contact';
+import MentionsLegales from './pages/MentionsLegales';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,6 +29,7 @@ function App() {
             <Route path="/prestations" element={<Prestations />} />
             <Route path="/a-propos" element={<APropos />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
           </Routes>
         </main>
         <Footer />
