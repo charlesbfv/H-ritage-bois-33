@@ -17,6 +17,8 @@ import pair7Avant from '../assets/images/pair7-avant.jpg';
 import pair7Apres from '../assets/images/pair7-apres.jpg';
 import pair8Avant from '../assets/images/pair8-avant.jpg';
 import pair8Apres from '../assets/images/pair8-apres.jpg';
+import pair9Avant from '../assets/images/pair9-avant.jpg';
+import pair9Apres from '../assets/images/pair9-apres.jpg';
 
 export interface BeforeAfterPair {
   avant: string;
@@ -43,4 +45,5 @@ export const aboutPairs: BeforeAfterPair[] = [
   { avant: pair6Avant, apres: pair6Apres },
   { avant: pair7Avant, apres: pair7Apres },
   { avant: pair8Avant, apres: pair8Apres },
+  { avant: pair9Avant, apres: pair9Apres },
 ];
