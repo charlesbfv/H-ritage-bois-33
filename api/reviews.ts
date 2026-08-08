@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { redis, checkAdminPassword } from './_lib/redis';
+import { getRedis, checkAdminPassword } from './_lib/redis';
 
 interface Review {
   id: string;
@@ -12,51 +12,64 @@ interface Review {
 const KEY = 'reviews';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method === 'GET') {
-    const reviews = (await redis.get<Review[]>(KEY)) ?? [];
-    reviews.sort((a, b) => b.createdAt - a.createdAt);
-    return res.status(200).json(reviews);
+  let redis;
+  try {
+    redis = getRedis();
+  } catch (err) {
+    console.error('[api/reviews] Redis config error:', err);
+    return res.status(500).json({ error: 'Base de données non configurée.' });
   }
 
-  if (req.method === 'POST') {
-    const { name, rating, comment } = req.body ?? {};
-
-    if (
-      typeof name !== 'string' || !name.trim() || name.length > 100 ||
-      typeof comment !== 'string' || !comment.trim() || comment.length > 1000 ||
-      typeof rating !== 'number' || !Number.isInteger(rating) || rating < 1 || rating > 5
-    ) {
-      return res.status(400).json({ error: 'Champs invalides.' });
+  try {
+    if (req.method === 'GET') {
+      const reviews = (await redis.get<Review[]>(KEY)) ?? [];
+      reviews.sort((a, b) => b.createdAt - a.createdAt);
+      return res.status(200).json(reviews);
     }
 
-    const review: Review = {
-      id: crypto.randomUUID(),
-      name: name.trim().slice(0, 100),
-      rating,
-      comment: comment.trim().slice(0, 1000),
-      createdAt: Date.now(),
-    };
+    if (req.method === 'POST') {
+      const { name, rating, comment } = req.body ?? {};
 
-    const reviews = (await redis.get<Review[]>(KEY)) ?? [];
-    reviews.push(review);
-    await redis.set(KEY, reviews);
+      if (
+        typeof name !== 'string' || !name.trim() || name.length > 100 ||
+        typeof comment !== 'string' || !comment.trim() || comment.length > 1000 ||
+        typeof rating !== 'number' || !Number.isInteger(rating) || rating < 1 || rating > 5
+      ) {
+        return res.status(400).json({ error: 'Champs invalides.' });
+      }
 
-    return res.status(201).json(review);
-  }
+      const review: Review = {
+        id: crypto.randomUUID(),
+        name: name.trim().slice(0, 100),
+        rating,
+        comment: comment.trim().slice(0, 1000),
+        createdAt: Date.now(),
+      };
 
-  if (req.method === 'DELETE') {
-    if (!checkAdminPassword(req.headers['x-admin-password'])) {
-      return res.status(401).json({ error: 'Non autorisé.' });
+      const reviews = (await redis.get<Review[]>(KEY)) ?? [];
+      reviews.push(review);
+      await redis.set(KEY, reviews);
+
+      return res.status(201).json(review);
     }
 
-    const { id } = req.query;
-    const reviews = (await redis.get<Review[]>(KEY)) ?? [];
-    const filtered = reviews.filter((r) => r.id !== id);
-    await redis.set(KEY, filtered);
+    if (req.method === 'DELETE') {
+      if (!checkAdminPassword(req.headers['x-admin-password'])) {
+        return res.status(401).json({ error: 'Non autorisé.' });
+      }
 
-    return res.status(200).json({ ok: true });
+      const { id } = req.query;
+      const reviews = (await redis.get<Review[]>(KEY)) ?? [];
+      const filtered = reviews.filter((r) => r.id !== id);
+      await redis.set(KEY, filtered);
+
+      return res.status(200).json({ ok: true });
+    }
+
+    res.setHeader('Allow', 'GET, POST, DELETE');
+    return res.status(405).json({ error: 'Méthode non autorisée.' });
+  } catch (err) {
+    console.error('[api/reviews] Unexpected error:', err);
+    return res.status(500).json({ error: 'Erreur serveur.' });
   }
-
-  res.setHeader('Allow', 'GET, POST, DELETE');
-  return res.status(405).json({ error: 'Méthode non autorisée.' });
 }
