@@ -45,9 +45,15 @@ export default function MentionsLegales() {
 
           <div>
             <h2 className="text-2xl font-semibold">Hébergement</h2>
-            <p className="mt-4 text-sm leading-relaxed text-ink/80">
-              Informations d'hébergement à compléter.
-            </p>
+            <div className="mt-4 space-y-1 text-sm leading-relaxed text-ink/80">
+              <p><strong className="text-wood">Vercel Inc.</strong></p>
+              <p>440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</p>
+              <p>
+                <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-forest hover:underline">
+                  vercel.com
+                </a>
+              </p>
+            </div>
           </div>
 
           <div>
