@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { LeafIcon, MailIcon, MapPinIcon, PhoneIcon } from './icons';
+import { MailIcon, MapPinIcon, PhoneIcon } from './icons';
+import logo from '../assets/images/logo.png';
 
 export default function Footer() {
   return (
@@ -7,9 +8,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest text-beige">
-              <LeafIcon className="h-5 w-5" />
-            </span>
+            <img src={logo} alt="Héritage Bois 33" className="h-9 w-9 object-contain" />
             <span className="font-display text-lg font-semibold text-beige">
               Héritage Bois 33
             </span>

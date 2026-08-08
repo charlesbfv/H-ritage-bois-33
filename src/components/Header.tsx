@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Button from './Button';
-import { LeafIcon, PhoneIcon } from './icons';
+import { PhoneIcon } from './icons';
+import logo from '../assets/images/logo.png';
 
 const links = [
   { to: '/', label: 'Accueil' },
@@ -17,9 +18,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-stone/15 bg-beige/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <NavLink to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest text-beige">
-            <LeafIcon className="h-5 w-5" />
-          </span>
+          <img src={logo} alt="Héritage Bois 33" className="h-9 w-9 object-contain" />
           <span className="font-display text-lg font-semibold text-wood">
             Héritage Bois 33
           </span>
