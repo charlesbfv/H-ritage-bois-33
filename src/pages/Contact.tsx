@@ -143,7 +143,7 @@ export default function Contact() {
                 <div className="sm:col-span-2">
                   <button
                     type="submit"
-                    className="w-full rounded-full bg-gold px-6 py-3 font-mont text-sm font-semibold text-white transition-colors hover:bg-gold-dark sm:w-auto"
+                    className="w-full rounded-full bg-gold px-6 py-3 font-mont text-sm font-semibold text-white transition-all duration-200 hover:bg-gold-dark hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] sm:w-auto"
                   >
                     Envoyer ma demande de devis
                   </button>

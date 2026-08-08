@@ -19,7 +19,7 @@ const styles: Record<Variant, string> = {
 };
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-mont font-semibold text-sm tracking-wide transition-all duration-200';
+  'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-mont font-semibold text-sm tracking-wide transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]';
 
 export default function Button({ to, href, variant = 'primary', children, className = '' }: ButtonProps) {
   const cls = `${base} ${styles[variant]} ${className}`;

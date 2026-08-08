@@ -130,7 +130,7 @@ export default function Reviews() {
         </div>
         <button
           type="submit"
-          className="mt-5 rounded-full bg-gold px-6 py-2.5 font-mont text-sm font-semibold text-white transition-colors hover:bg-gold-dark"
+          className="mt-5 rounded-full bg-gold px-6 py-2.5 font-mont text-sm font-semibold text-white transition-all duration-200 hover:bg-gold-dark hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
         >
           Publier mon avis
         </button>
