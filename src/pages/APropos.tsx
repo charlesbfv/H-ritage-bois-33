@@ -1,6 +1,6 @@
 import Button from '../components/Button';
-import ImageSlot from '../components/ImageSlot';
-import { aboutImages } from '../content/images';
+import BeforeAfter from '../components/BeforeAfter';
+import { aboutPairs } from '../content/images';
 import { LeafIcon, ShieldIcon, SparkleIcon } from '../components/icons';
 
 export default function APropos() {
@@ -55,11 +55,9 @@ export default function APropos() {
           <p className="mx-auto mt-3 max-w-xl text-center text-sm text-ink/75">
             Un aperçu de notre savoir-faire sur le terrain.
           </p>
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {aboutImages.map((slot, i) => (
-              <div key={i} className="aspect-square overflow-hidden rounded-2xl shadow-sm transition-transform duration-300 hover:scale-[1.02]">
-                <ImageSlot slot={slot} index={i} />
-              </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {aboutPairs.map((pair, i) => (
+              <BeforeAfter key={i} pair={pair} />
             ))}
           </div>
         </div>

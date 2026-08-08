@@ -1,32 +1,46 @@
-// Registre centralisé des photos du site.
-// Pour ajouter une photo : dépose le fichier dans src/assets/images/
-// puis importe-le ici et remplace la valeur `null` correspondante.
-//
-// Exemple :
-//   import home1 from '../assets/images/home-1.jpg';
-//   home1,
-//
-// L'ordre des clés = l'ordre d'affichage sur la page.
+import heroAfter from '../assets/images/hero-after.jpg';
 
-export interface ImageSlot {
-  src: string | null;
-  alt: string;
+import pair1Avant from '../assets/images/pair1-avant.jpg';
+import pair1Apres from '../assets/images/pair1-apres.jpg';
+import differenceCloseup from '../assets/images/difference-closeup.jpg';
+import pair2Avant from '../assets/images/pair2-avant.jpg';
+import pair2Apres from '../assets/images/pair2-apres.jpg';
+import pair3Avant from '../assets/images/pair3-avant.jpg';
+import pair3Apres from '../assets/images/pair3-apres.jpg';
+import pair4Avant from '../assets/images/pair4-avant.jpg';
+import pair4Apres from '../assets/images/pair4-apres.jpg';
+import pair5Avant from '../assets/images/pair5-avant.jpg';
+import pair5Apres from '../assets/images/pair5-apres.jpg';
+import pair6Avant from '../assets/images/pair6-avant.jpg';
+import pair6Apres from '../assets/images/pair6-apres.jpg';
+import pair7Avant from '../assets/images/pair7-avant.jpg';
+import pair7Apres from '../assets/images/pair7-apres.jpg';
+import pair8Avant from '../assets/images/pair8-avant.jpg';
+import pair8Apres from '../assets/images/pair8-apres.jpg';
+
+export interface BeforeAfterPair {
+  avant: string;
+  apres: string;
 }
 
-export const homeImages: ImageSlot[] = [
-  { src: null, alt: 'Terrasse en bois nettoyée par Héritage Bois 33' },
-  { src: null, alt: 'Terrasse en bois avant nettoyage' },
-  { src: null, alt: 'Terrasse en bois après nettoyage' },
-  { src: null, alt: 'Intervention de nettoyage de terrasse en bois' },
+// Photo de fond du hero (page d'accueil)
+export const heroImage = heroAfter;
+
+// Photo plein cadre montrant la différence de nettoyage en un coup d'œil
+export const differenceImage = differenceCloseup;
+
+// Paires avant / après mises en avant sur la page d'accueil
+export const homePairs: BeforeAfterPair[] = [
+  { avant: pair1Avant, apres: pair1Apres },
+  { avant: pair3Avant, apres: pair3Apres },
 ];
 
-export const aboutImages: ImageSlot[] = [
-  { src: null, alt: 'Héritage Bois 33 — photo 1' },
-  { src: null, alt: 'Héritage Bois 33 — photo 2' },
-  { src: null, alt: 'Héritage Bois 33 — photo 3' },
-  { src: null, alt: 'Héritage Bois 33 — photo 4' },
-  { src: null, alt: 'Héritage Bois 33 — photo 5' },
-  { src: null, alt: 'Héritage Bois 33 — photo 6' },
-  { src: null, alt: 'Héritage Bois 33 — photo 7' },
-  { src: null, alt: 'Héritage Bois 33 — photo 8' },
+// Paires avant / après présentées sur la page À propos
+export const aboutPairs: BeforeAfterPair[] = [
+  { avant: pair2Avant, apres: pair2Apres },
+  { avant: pair4Avant, apres: pair4Apres },
+  { avant: pair5Avant, apres: pair5Apres },
+  { avant: pair6Avant, apres: pair6Apres },
+  { avant: pair7Avant, apres: pair7Apres },
+  { avant: pair8Avant, apres: pair8Apres },
 ];

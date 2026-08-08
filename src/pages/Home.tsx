@@ -1,6 +1,6 @@
 import Button from '../components/Button';
-import ImageSlot from '../components/ImageSlot';
-import { homeImages } from '../content/images';
+import BeforeAfter from '../components/BeforeAfter';
+import { differenceImage, heroImage, homePairs } from '../content/images';
 import { prestations } from '../content/prestations';
 import {
   CheckIcon,
@@ -17,16 +17,20 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-beige">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 md:grid-cols-2 md:py-20">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-forest/10 px-4 py-1.5 font-mont text-xs font-semibold uppercase tracking-wide text-forest">
+      <section
+        className="relative bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-wood-dark/85 via-wood-dark/65 to-wood-dark/30" />
+        <div className="relative mx-auto max-w-6xl px-5 py-24 md:py-36">
+          <div className="max-w-xl">
+            <span className="inline-flex items-center gap-2 rounded-full bg-beige/15 px-4 py-1.5 font-mont text-xs font-semibold uppercase tracking-wide text-beige backdrop-blur-sm">
               Bordeaux &amp; Bassin d'Arcachon
             </span>
-            <h1 className="mt-5 text-4xl leading-tight font-semibold md:text-5xl">
+            <h1 className="mt-5 text-4xl leading-tight font-semibold text-beige md:text-5xl">
               Le nettoyage de terrasses en bois, confié à des experts
             </h1>
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-ink/80">
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-beige/90">
               Héritage Bois 33 redonne à vos terrasses en bois leur éclat
               d'origine grâce à un savoir-faire précis et des méthodes
               adaptées à chaque essence de bois. Un service professionnel,
@@ -36,18 +40,18 @@ export default function Home() {
               <Button to="/contact" variant="primary">
                 Demander un devis gratuit
               </Button>
-              <Button href="tel:0767160794" variant="secondary">
+              <Button
+                href="tel:0767160794"
+                variant="secondary"
+                className="!border-beige !text-beige hover:!bg-beige hover:!text-wood"
+              >
                 <PhoneIcon className="h-4 w-4" /> Appeler maintenant
               </Button>
             </div>
-            <div className="mt-8 flex items-center gap-2 text-sm text-stone">
-              <MapPinIcon className="h-4 w-4 text-forest" />
+            <div className="mt-8 flex items-center gap-2 text-sm text-beige/90">
+              <MapPinIcon className="h-4 w-4 text-gold" />
               Intervention à Bordeaux et ses alentours, Bassin d'Arcachon et ses alentours
             </div>
-          </div>
-
-          <div className="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-            <ImageSlot slot={homeImages[0]} index={0} />
           </div>
         </div>
       </section>
@@ -123,17 +127,16 @@ export default function Home() {
             La différence Héritage Bois 33, visible en un coup d'œil.
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {homeImages.slice(1, 3).map((slot, i) => (
-              <div
-                key={i}
-                className="aspect-[4/3] overflow-hidden rounded-2xl shadow-md transition-transform duration-300 hover:scale-[1.02]"
-              >
-                <ImageSlot slot={slot} index={i + 1} />
-              </div>
+            {homePairs.map((pair, i) => (
+              <BeforeAfter key={i} pair={pair} />
             ))}
           </div>
-          <div className="mt-6 aspect-[16/7] overflow-hidden rounded-2xl shadow-md">
-            <ImageSlot slot={homeImages[3]} index={3} />
+          <div className="mt-6 overflow-hidden rounded-2xl shadow-md">
+            <img
+              src={differenceImage}
+              alt="Terrasse en bois : différence de nettoyage visible sur les lattes"
+              className="max-h-[420px] w-full object-cover"
+            />
           </div>
         </div>
       </section>
