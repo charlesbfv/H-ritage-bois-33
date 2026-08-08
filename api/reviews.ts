@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getRedis, checkAdminPassword } from './_lib/redis';
+import { getRedis, checkAdminPassword } from './_lib/redis.js';
 
 interface Review {
   id: string;
