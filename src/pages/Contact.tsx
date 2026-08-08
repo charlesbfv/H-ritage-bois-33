@@ -19,6 +19,8 @@ export default function Contact() {
     message: '',
   });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
@@ -26,9 +28,24 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSent(true);
+    if (sending) return;
+    setSending(true);
+    setError(false);
+    try {
+      const res = await fetch('/api/devis', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('request failed');
+      setSent(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -143,10 +160,16 @@ export default function Contact() {
                 <div className="sm:col-span-2">
                   <button
                     type="submit"
-                    className="w-full rounded-full bg-gold px-6 py-3 font-mont text-sm font-semibold text-white transition-all duration-200 hover:bg-gold-dark hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] sm:w-auto"
+                    disabled={sending}
+                    className="w-full rounded-full bg-gold px-6 py-3 font-mont text-sm font-semibold text-white transition-all duration-200 hover:bg-gold-dark hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] disabled:opacity-60 sm:w-auto"
                   >
-                    Envoyer ma demande de devis
+                    {sending ? 'Envoi...' : 'Envoyer ma demande de devis'}
                   </button>
+                  {error && (
+                    <p className="mt-3 text-sm text-red-700">
+                      Une erreur est survenue, merci de réessayer ou de nous appeler directement.
+                    </p>
+                  )}
                 </div>
               </form>
             )}
