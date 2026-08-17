@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StarIcon } from '../components/icons';
+import Seo from '../components/Seo';
 
 interface Review {
   id: string;
@@ -93,6 +94,7 @@ export default function Admin() {
   if (!authed) {
     return (
       <div className="mx-auto flex min-h-[60vh] max-w-sm flex-col justify-center px-5 py-16">
+        <Seo title="Administration | Héritage Bois 33" description="Espace privé." noindex />
         <h1 className="text-2xl font-semibold text-wood">Espace administration</h1>
         <form onSubmit={handleLogin} className="mt-6 space-y-4">
           <input
@@ -120,6 +122,7 @@ export default function Admin() {
 
   return (
     <div className="mx-auto max-w-5xl px-5 py-12">
+      <Seo title="Administration | Héritage Bois 33" description="Espace privé." noindex />
       <h1 className="text-3xl font-semibold text-wood">Espace administration</h1>
 
       <div className="mt-6 flex gap-2">

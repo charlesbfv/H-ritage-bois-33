@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://xn--hritage-bois-33-bnb.fr/sitemap.xml

@@ -1,28 +1,30 @@
-import heroAfter from '../assets/images/hero-after.jpg';
+import heroAfter from '../assets/images/nettoyage-terrasse-bois-bordeaux.jpg';
 
-import pair1Avant from '../assets/images/pair1-avant.jpg';
-import pair1Apres from '../assets/images/pair1-apres.jpg';
-import differenceCloseup from '../assets/images/difference-closeup.jpg';
-import pair2Avant from '../assets/images/pair2-avant.jpg';
-import pair2Apres from '../assets/images/pair2-apres.jpg';
-import pair3Avant from '../assets/images/pair3-avant.jpg';
-import pair3Apres from '../assets/images/pair3-apres.jpg';
-import pair4Avant from '../assets/images/pair4-avant.jpg';
-import pair4Apres from '../assets/images/pair4-apres.jpg';
-import pair5Avant from '../assets/images/pair5-avant.jpg';
-import pair5Apres from '../assets/images/pair5-apres.jpg';
-import pair6Avant from '../assets/images/pair6-avant.jpg';
-import pair6Apres from '../assets/images/pair6-apres.jpg';
-import pair7Avant from '../assets/images/pair7-avant.jpg';
-import pair7Apres from '../assets/images/pair7-apres.jpg';
-import pair8Avant from '../assets/images/pair8-avant.jpg';
-import pair8Apres from '../assets/images/pair8-apres.jpg';
-import pair9Avant from '../assets/images/pair9-avant.jpg';
-import pair9Apres from '../assets/images/pair9-apres.jpg';
+import pair1Avant from '../assets/images/entretien-terrasse-bois-avant-1.jpg';
+import pair1Apres from '../assets/images/entretien-terrasse-bois-apres-1.jpg';
+import differenceCloseup from '../assets/images/nettoyage-terrasse-bois-avant-apres-detail.jpg';
+import pair2Avant from '../assets/images/entretien-terrasse-bois-avant-2.jpg';
+import pair2Apres from '../assets/images/entretien-terrasse-bois-apres-2.jpg';
+import pair3Avant from '../assets/images/entretien-terrasse-bois-avant-3.jpg';
+import pair3Apres from '../assets/images/entretien-terrasse-bois-apres-3.jpg';
+import pair4Avant from '../assets/images/entretien-terrasse-bois-avant-4.jpg';
+import pair4Apres from '../assets/images/entretien-terrasse-bois-apres-4.jpg';
+import pair5Avant from '../assets/images/entretien-terrasse-bois-avant-5.jpg';
+import pair5Apres from '../assets/images/entretien-terrasse-bois-apres-5.jpg';
+import pair6Avant from '../assets/images/entretien-terrasse-bois-avant-6.jpg';
+import pair6Apres from '../assets/images/entretien-terrasse-bois-apres-6.jpg';
+import pair7Avant from '../assets/images/entretien-terrasse-bois-avant-7.jpg';
+import pair7Apres from '../assets/images/entretien-terrasse-bois-apres-7.jpg';
+import pair8Avant from '../assets/images/entretien-terrasse-bois-avant-8.jpg';
+import pair8Apres from '../assets/images/entretien-terrasse-bois-apres-8.jpg';
+import pair9Avant from '../assets/images/entretien-terrasse-bois-avant-9.jpg';
+import pair9Apres from '../assets/images/entretien-terrasse-bois-apres-9.jpg';
 
 export interface BeforeAfterPair {
   avant: string;
   apres: string;
+  avantAlt: string;
+  apresAlt: string;
 }
 
 // Photo de fond du hero (page d'accueil)
@@ -31,19 +33,28 @@ export const heroImage = heroAfter;
 // Photo plein cadre montrant la différence de nettoyage en un coup d'œil
 export const differenceImage = differenceCloseup;
 
+function pair(avant: string, apres: string, n: number): BeforeAfterPair {
+  return {
+    avant,
+    apres,
+    avantAlt: `Terrasse en bois grisée et sale avant nettoyage par Héritage Bois 33 (Gironde) - exemple ${n}`,
+    apresAlt: `Terrasse en bois nettoyée et ravivée après intervention de Héritage Bois 33 (Gironde) - exemple ${n}`,
+  };
+}
+
 // Paires avant / après mises en avant sur la page d'accueil
 export const homePairs: BeforeAfterPair[] = [
-  { avant: pair1Avant, apres: pair1Apres },
-  { avant: pair3Avant, apres: pair3Apres },
+  pair(pair1Avant, pair1Apres, 1),
+  pair(pair3Avant, pair3Apres, 3),
 ];
 
 // Paires avant / après présentées sur la page À propos
 export const aboutPairs: BeforeAfterPair[] = [
-  { avant: pair2Avant, apres: pair2Apres },
-  { avant: pair4Avant, apres: pair4Apres },
-  { avant: pair5Avant, apres: pair5Apres },
-  { avant: pair6Avant, apres: pair6Apres },
-  { avant: pair7Avant, apres: pair7Apres },
-  { avant: pair8Avant, apres: pair8Apres },
-  { avant: pair9Avant, apres: pair9Apres },
+  pair(pair2Avant, pair2Apres, 2),
+  pair(pair4Avant, pair4Apres, 4),
+  pair(pair5Avant, pair5Apres, 5),
+  pair(pair6Avant, pair6Apres, 6),
+  pair(pair7Avant, pair7Apres, 7),
+  pair(pair8Avant, pair8Apres, 8),
+  pair(pair9Avant, pair9Apres, 9),
 ];

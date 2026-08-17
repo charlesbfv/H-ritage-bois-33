@@ -1,8 +1,14 @@
 import { MailIcon, MapPinIcon, PhoneIcon } from '../components/icons';
+import Seo from '../components/Seo';
 
 export default function MentionsLegales() {
   return (
     <div>
+      <Seo
+        title="Mentions légales | Héritage Bois 33"
+        description="Mentions légales du site Héritage Bois 33."
+        noindex
+      />
       <section className="bg-white/40 py-16">
         <div className="mx-auto max-w-4xl px-5 text-center">
           <h1 className="text-4xl font-semibold md:text-5xl">Mentions légales</h1>

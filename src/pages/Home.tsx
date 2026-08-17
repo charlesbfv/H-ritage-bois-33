@@ -1,5 +1,6 @@
 import Button from '../components/Button';
 import BeforeAfter from '../components/BeforeAfter';
+import Seo from '../components/Seo';
 import { differenceImage, heroImage, homePairs } from '../content/images';
 import { prestations } from '../content/prestations';
 import {
@@ -16,6 +17,10 @@ const iconFor = { droplet: DropletIcon, sparkle: SparkleIcon, shield: ShieldIcon
 export default function Home() {
   return (
     <div>
+      <Seo
+        title="Nettoyage de terrasse bois Gironde & Bassin d'Arcachon | Héritage Bois 33"
+        description="Nettoyage et entretien de terrasses en bois à Bordeaux, Arcachon et sur tout le Bassin d'Arcachon. Devis gratuit, résultats avant/après visibles. Héritage Bois 33."
+      />
       {/* Hero */}
       <section
         className="relative bg-cover bg-center"
@@ -134,7 +139,7 @@ export default function Home() {
           <div className="mt-6 overflow-hidden rounded-2xl shadow-md">
             <img
               src={differenceImage}
-              alt="Terrasse en bois : différence de nettoyage visible sur les lattes"
+              alt="Différence visible avant/après nettoyage de terrasse en bois par Héritage Bois 33 en Gironde"
               className="max-h-[420px] w-full object-cover"
             />
           </div>

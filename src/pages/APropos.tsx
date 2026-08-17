@@ -1,11 +1,16 @@
 import Button from '../components/Button';
 import BeforeAfter from '../components/BeforeAfter';
+import Seo from '../components/Seo';
 import { aboutPairs } from '../content/images';
 import { LeafIcon, ShieldIcon, SparkleIcon } from '../components/icons';
 
 export default function APropos() {
   return (
     <div>
+      <Seo
+        title="À propos d'Héritage Bois 33 | Expert nettoyage terrasse bois en Gironde"
+        description="Héritage Bois 33, spécialiste du nettoyage et de l'entretien de terrasses en bois pour particuliers et professionnels. Découvrez notre approche et nos réalisations en photos."
+      />
       <section className="bg-white/40 py-16">
         <div className="mx-auto max-w-4xl px-5 text-center">
           <h1 className="text-4xl font-semibold md:text-5xl">Héritage Bois 33</h1>

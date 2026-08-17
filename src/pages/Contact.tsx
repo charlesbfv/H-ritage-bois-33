@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reviews from '../components/Reviews';
+import Seo from '../components/Seo';
 import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon, SlidersIcon } from '../components/icons';
 
 const prestationOptions = [
@@ -50,6 +51,10 @@ export default function Contact() {
 
   return (
     <div>
+      <Seo
+        title="Devis nettoyage terrasse bois gratuit | Héritage Bois 33"
+        description="Demandez votre devis gratuit de nettoyage ou entretien de terrasse en bois en Gironde et Bassin d'Arcachon. Réponse sous 24 à 48h. Contact : 07 67 16 07 94."
+      />
       <section className="bg-white/40 py-16">
         <div className="mx-auto max-w-4xl px-5 text-center">
           <h1 className="text-4xl font-semibold md:text-5xl">Demander un devis</h1>

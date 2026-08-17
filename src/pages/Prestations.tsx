@@ -1,4 +1,5 @@
 import Button from '../components/Button';
+import Seo from '../components/Seo';
 import { prestations } from '../content/prestations';
 import { CheckIcon, DropletIcon, ShieldIcon, SlidersIcon, SparkleIcon } from '../components/icons';
 
@@ -7,6 +8,10 @@ const iconFor = { droplet: DropletIcon, sparkle: SparkleIcon, shield: ShieldIcon
 export default function Prestations() {
   return (
     <div>
+      <Seo
+        title="Prestations de nettoyage et entretien de terrasse bois | Héritage Bois 33"
+        description="Nettoyage simple, nettoyage en profondeur, application de dégriseur : découvrez nos 3 formules d'entretien de terrasse en bois adaptées à votre essence de bois, en Gironde et Bassin d'Arcachon."
+      />
       <section className="bg-white/40 py-16">
         <div className="mx-auto max-w-4xl px-5 text-center">
           <h1 className="text-4xl font-semibold md:text-5xl">Nos prestations</h1>
