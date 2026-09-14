@@ -149,6 +149,9 @@ export default function Home() {
             <img
               src={differenceImage}
               alt="Différence visible avant/après nettoyage de terrasse en bois par Héritage Bois 33 en Gironde"
+              width={1199}
+              height={1600}
+              loading="lazy"
               className="max-h-[420px] w-full object-cover"
             />
           </div>

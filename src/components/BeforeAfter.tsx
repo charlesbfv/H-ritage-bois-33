@@ -13,6 +13,8 @@ export default function BeforeAfter({ pair, className = '' }: Props) {
           src={pair.avant}
           alt={pair.avantAlt}
           loading="lazy"
+          width={900}
+          height={1200}
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <span className="absolute bottom-2 left-2 rounded-full bg-wood/85 px-3 py-1 font-mont text-[11px] font-semibold uppercase tracking-wide text-beige">
@@ -24,6 +26,8 @@ export default function BeforeAfter({ pair, className = '' }: Props) {
           src={pair.apres}
           alt={pair.apresAlt}
           loading="lazy"
+          width={900}
+          height={1200}
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <span className="absolute bottom-2 left-2 rounded-full bg-forest/90 px-3 py-1 font-mont text-[11px] font-semibold uppercase tracking-wide text-beige">

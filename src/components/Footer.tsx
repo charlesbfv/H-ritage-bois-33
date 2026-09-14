@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Héritage Bois 33" className="h-9 w-9 object-contain" />
+            <img src={logo} alt="Héritage Bois 33" width={108} height={106} className="h-9 w-9 object-contain" />
             <span className="font-display text-lg font-semibold text-beige">
               Héritage Bois 33
             </span>

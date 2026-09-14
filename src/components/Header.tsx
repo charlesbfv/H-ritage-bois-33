@@ -18,7 +18,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-stone/15 bg-beige/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <NavLink to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img src={logo} alt="Héritage Bois 33" className="h-9 w-9 object-contain" />
+          <img src={logo} alt="Héritage Bois 33" width={108} height={106} className="h-9 w-9 object-contain" />
           <span className="font-display text-lg font-semibold text-wood">
             Héritage Bois 33
           </span>
