@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -34,8 +34,11 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="/admin" element={<Admin />} />
-            <Route path="/nettoyage-terrasse-bois-:slug" element={<LocalPage />} />
+            <Route path="/nettoyage-terrasse-bois-bordeaux" element={<LocalPage slug="bordeaux" />} />
+            <Route path="/nettoyage-terrasse-bois-arcachon" element={<LocalPage slug="arcachon" />} />
+            <Route path="/nettoyage-terrasse-bois-cap-ferret" element={<LocalPage slug="cap-ferret" />} />
             <Route path="/application-saturateur-terrasse-bois" element={<ServiceSaturateur />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
         <Footer />

@@ -1,4 +1,4 @@
-import { Navigate, useParams, Link } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import Button from '../components/Button';
 import BeforeAfter from '../components/BeforeAfter';
@@ -7,8 +7,11 @@ import { homePairs } from '../content/images';
 import { prestations } from '../content/prestations';
 import { CheckIcon, MapPinIcon, PhoneIcon } from '../components/icons';
 
-export default function LocalPage() {
-  const { slug } = useParams();
+interface Props {
+  slug: string;
+}
+
+export default function LocalPage({ slug }: Props) {
   const content = localPages.find((p) => p.slug === slug);
 
   if (!content) {
