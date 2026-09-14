@@ -1,8 +1,10 @@
 import Button from '../components/Button';
 import BeforeAfter from '../components/BeforeAfter';
 import Seo from '../components/Seo';
+import { Link } from 'react-router-dom';
 import { differenceImage, heroImage, homePairs } from '../content/images';
 import { prestations } from '../content/prestations';
+import { localPages } from '../content/localPages';
 import {
   CheckIcon,
   DropletIcon,
@@ -122,6 +124,13 @@ export default function Home() {
             Voir le détail des prestations
           </Button>
         </div>
+        <p className="mt-6 text-center text-sm text-stone">
+          Vous cherchez à faire{' '}
+          <Link to="/application-saturateur-terrasse-bois" className="text-forest hover:underline">
+            appliquer un dégriseur
+          </Link>{' '}
+          sur votre terrasse&nbsp;?
+        </p>
       </section>
 
       {/* Avant / après */}
@@ -143,6 +152,31 @@ export default function Home() {
               className="max-h-[420px] w-full object-cover"
             />
           </div>
+        </div>
+      </section>
+
+      {/* Zones d'intervention */}
+      <section className="mx-auto max-w-6xl px-5 py-16">
+        <h2 className="text-center text-3xl font-semibold">Nos zones d'intervention</h2>
+        <p className="mx-auto mt-3 max-w-xl text-center text-sm text-ink/75">
+          Découvrez nos prestations de nettoyage de terrasse en bois près de chez vous.
+        </p>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {localPages.map((p) => (
+            <Link
+              key={p.slug}
+              to={`/nettoyage-terrasse-bois-${p.slug}`}
+              className="group rounded-2xl border border-stone/15 bg-white p-7 shadow-sm transition-shadow hover:shadow-md"
+            >
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-forest/10 text-forest">
+                <MapPinIcon className="h-5 w-5" />
+              </span>
+              <h3 className="mt-4 text-lg font-semibold text-wood group-hover:text-forest">
+                {p.ville}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/75">{p.intro}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { MailIcon, MapPinIcon, PhoneIcon } from './icons';
 import logo from '../assets/images/logo.png';
+import { localPages } from '../content/localPages';
 
 export default function Footer() {
   return (
     <footer className="bg-wood text-beige/90">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
             <img src={logo} alt="Héritage Bois 33" className="h-9 w-9 object-contain" />
@@ -28,6 +29,21 @@ export default function Footer() {
             <li><Link to="/prestations" className="hover:text-gold">Prestations</Link></li>
             <li><Link to="/a-propos" className="hover:text-gold">À propos</Link></li>
             <li><Link to="/contact" className="hover:text-gold">Contact / Devis</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-mont text-sm font-semibold uppercase tracking-wide text-gold">
+            Zones desservies
+          </h3>
+          <ul className="mt-4 space-y-2 text-sm text-beige/80">
+            {localPages.map((p) => (
+              <li key={p.slug}>
+                <Link to={`/nettoyage-terrasse-bois-${p.slug}`} className="hover:text-gold">
+                  {p.ville}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

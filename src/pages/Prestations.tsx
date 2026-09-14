@@ -1,5 +1,6 @@
 import Button from '../components/Button';
 import Seo from '../components/Seo';
+import { Link } from 'react-router-dom';
 import { prestations } from '../content/prestations';
 import { CheckIcon, DropletIcon, ShieldIcon, SlidersIcon, SparkleIcon } from '../components/icons';
 
@@ -52,6 +53,14 @@ export default function Prestations() {
                       </li>
                     ))}
                   </ul>
+                  {p.icon === 'shield' && (
+                    <Link
+                      to="/application-saturateur-terrasse-bois"
+                      className="mt-4 inline-block text-sm font-semibold text-forest hover:underline"
+                    >
+                      En savoir plus sur l'application du dégriseur →
+                    </Link>
+                  )}
                 </div>
               </div>
             );

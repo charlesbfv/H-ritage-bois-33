@@ -9,6 +9,8 @@ import APropos from './pages/APropos';
 import Contact from './pages/Contact';
 import MentionsLegales from './pages/MentionsLegales';
 import Admin from './pages/Admin';
+import LocalPage from './pages/LocalPage';
+import ServiceSaturateur from './pages/ServiceSaturateur';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,6 +34,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/nettoyage-terrasse-bois-:slug" element={<LocalPage />} />
+            <Route path="/application-saturateur-terrasse-bois" element={<ServiceSaturateur />} />
           </Routes>
         </main>
         <Footer />
