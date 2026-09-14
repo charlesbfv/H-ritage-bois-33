@@ -11,6 +11,7 @@ import MentionsLegales from './pages/MentionsLegales';
 import Admin from './pages/Admin';
 import LocalPage from './pages/LocalPage';
 import ServiceSaturateur from './pages/ServiceSaturateur';
+import { localPages } from './content/localPages';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +38,15 @@ function App() {
             <Route path="/nettoyage-terrasse-bois-bordeaux" element={<LocalPage slug="bordeaux" />} />
             <Route path="/nettoyage-terrasse-bois-arcachon" element={<LocalPage slug="arcachon" />} />
             <Route path="/nettoyage-terrasse-bois-cap-ferret" element={<LocalPage slug="cap-ferret" />} />
+            {localPages
+              .filter((p) => !['bordeaux', 'arcachon', 'cap-ferret'].includes(p.slug))
+              .map((p) => (
+                <Route
+                  key={p.slug}
+                  path={`/nettoyage-terrasse-bois-${p.slug}`}
+                  element={<LocalPage slug={p.slug} />}
+                />
+              ))}
             <Route path="/application-saturateur-terrasse-bois" element={<ServiceSaturateur />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
