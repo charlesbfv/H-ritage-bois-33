@@ -9,7 +9,7 @@ export default function ServiceSaturateur() {
     <div>
       <Seo
         title="Application de dégriseur et saturateur sur terrasse bois | Héritage Bois 33"
-        description="Redonnez à votre terrasse en bois son aspect d'origine grâce à l'application d'un dégriseur. Traitement complet en Gironde et Bassin d'Arcachon. Devis gratuit."
+        description="Redonnez à votre terrasse en bois son aspect d'origine grâce à l'application d'un dégriseur. Traitement complet dans toute la Gironde. Devis gratuit."
       />
 
       <section className="bg-white/40 py-16">
@@ -113,7 +113,7 @@ export default function ServiceSaturateur() {
         </p>
         <ul className="mx-auto mt-6 inline-flex flex-col gap-2 text-left text-sm text-ink/80">
           <li className="flex items-center gap-2">
-            <CheckIcon className="h-4 w-4 text-forest" /> Intervention en Gironde et sur le Bassin d'Arcachon
+            <CheckIcon className="h-4 w-4 text-forest" /> Intervention dans toute la Gironde
           </li>
           <li className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-forest" /> Devis gratuit et sans engagement

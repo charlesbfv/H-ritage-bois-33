@@ -20,8 +20,8 @@ export default function Home() {
   return (
     <div>
       <Seo
-        title="Nettoyage de terrasse bois Gironde & Bassin d'Arcachon | Héritage Bois 33"
-        description="Nettoyage et entretien de terrasses en bois à Bordeaux, Arcachon et sur tout le Bassin d'Arcachon. Devis gratuit, résultats avant/après visibles. Héritage Bois 33."
+        title="Nettoyage de terrasse en bois en Gironde | Héritage Bois 33"
+        description="Nettoyage et entretien de terrasses en bois dans toute la Gironde : Bordeaux, Bassin d'Arcachon, Médoc, Entre-deux-Mers, Libournais. Devis gratuit, résultats avant/après visibles."
       />
       {/* Hero */}
       <section
@@ -32,7 +32,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl px-5 py-24 md:py-36">
           <div className="max-w-xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-beige/15 px-4 py-1.5 font-mont text-xs font-semibold uppercase tracking-wide text-beige backdrop-blur-sm">
-              Bordeaux &amp; Bassin d'Arcachon
+              Toute la Gironde
             </span>
             <h1 className="mt-5 text-4xl leading-tight font-semibold text-beige md:text-5xl">
               Le nettoyage de terrasses en bois, confié à des experts
@@ -57,7 +57,7 @@ export default function Home() {
             </div>
             <div className="mt-8 flex items-center gap-2 text-sm text-beige/90">
               <MapPinIcon className="h-4 w-4 text-gold" />
-              Intervention à Bordeaux et ses alentours, Bassin d'Arcachon et ses alentours
+              Intervention dans toute la Gironde : Bordeaux, Bassin d'Arcachon et alentours
             </div>
           </div>
         </div>
@@ -181,9 +181,13 @@ export default function Home() {
             </Link>
           ))}
         </div>
+        <p className="mt-8 text-center text-sm text-stone">
+          Une autre commune de Gironde ?{' '}
+          <Link to="/nettoyage-terrasse-bois-gironde" className="text-forest hover:underline">
+            Découvrez toutes nos zones d'intervention
+          </Link>
+        </p>
       </section>
-
-      {/* CTA final */}
       <section className="mx-auto max-w-6xl px-5 py-16">
         <div className="rounded-3xl bg-wood px-8 py-14 text-center text-beige">
           <h2 className="text-3xl font-semibold text-beige">

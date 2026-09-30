@@ -11,7 +11,7 @@ export default function Prestations() {
     <div>
       <Seo
         title="Prestations de nettoyage et entretien de terrasse bois | Héritage Bois 33"
-        description="Nettoyage simple, nettoyage en profondeur, application de dégriseur : découvrez nos 3 formules d'entretien de terrasse en bois adaptées à votre essence de bois, en Gironde et Bassin d'Arcachon."
+        description="Nettoyage simple, nettoyage en profondeur, application de dégriseur : découvrez nos 3 formules d'entretien de terrasse en bois adaptées à votre essence de bois, dans toute la Gironde."
       />
       <section className="bg-white/40 py-16">
         <div className="mx-auto max-w-4xl px-5 text-center">

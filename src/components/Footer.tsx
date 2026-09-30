@@ -44,6 +44,11 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/nettoyage-terrasse-bois-gironde" className="hover:text-gold">
+                Toute la Gironde
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -77,7 +82,7 @@ export default function Footer() {
             Mentions légales
           </Link>
         </p>
-        <p className="mt-1">Zone d'intervention : Bordeaux et alentours, Bassin d'Arcachon et alentours</p>
+        <p className="mt-1">Zone d'intervention : toute la Gironde (Bordeaux, Bassin d'Arcachon et alentours)</p>
       </div>
     </footer>
   );

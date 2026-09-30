@@ -53,7 +53,7 @@ export default function Contact() {
     <div>
       <Seo
         title="Devis nettoyage terrasse bois gratuit | Héritage Bois 33"
-        description="Demandez votre devis gratuit de nettoyage ou entretien de terrasse en bois en Gironde et Bassin d'Arcachon. Réponse sous 24 à 48h. Contact : 07 67 16 07 94."
+        description="Demandez votre devis gratuit de nettoyage ou entretien de terrasse en bois dans toute la Gironde. Réponse sous 24 à 48h. Contact : 07 67 16 07 94."
       />
       <section className="bg-white/40 py-16">
         <div className="mx-auto max-w-4xl px-5 text-center">

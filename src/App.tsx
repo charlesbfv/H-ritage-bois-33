@@ -11,6 +11,7 @@ import MentionsLegales from './pages/MentionsLegales';
 import Admin from './pages/Admin';
 import LocalPage from './pages/LocalPage';
 import ServiceSaturateur from './pages/ServiceSaturateur';
+import ZonesGironde from './pages/ZonesGironde';
 import { localPages } from './content/localPages';
 
 function ScrollToTop() {
@@ -48,6 +49,7 @@ function App() {
                 />
               ))}
             <Route path="/application-saturateur-terrasse-bois" element={<ServiceSaturateur />} />
+            <Route path="/nettoyage-terrasse-bois-gironde" element={<ZonesGironde />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
